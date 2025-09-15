@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadership | Ntanganedzeni Phidzaglima</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    main { max-width: 1100px; margin: 6rem auto 4rem; padding: 0 2rem; }
+
+    h1 { text-align: center; color: var(--primary); margin-bottom: 3rem; }
+
+    .leadership-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .leadership-intro img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0%;
+      /*border: 6px solid var(--accent);*/
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .leadership-intro p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Leadership experiences */
+    .experiences {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .experience-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      display: flex;
+      flex-direction: column;
+      cursor: default;
+    }
+
+    .experience-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .experience-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .experience-content {
+      padding: 1rem 1.5rem;
+    }
+
+    .experience-content h3 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .experience-content p, 
+    .experience-content ul {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .experience-content ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Ntanganedzeni</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="leadership.html">Leadership</a></li>
+        <li><a href="tutoring.html">Tutoring</a></li>
+        <li><a href="competitions.html">Hackathons</a></li>
+        <li><a href="certificate.html">Certificates</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>My Leadership Journey in Tech Communities</h1>
+
+    <div class="leadership-intro">
+      <img src="./images/leadership1.jpg" alt="Photo with President Cyril Ramaphosa">
+      <p>
+        My leadership journey reflects my ability to inspire and create impact. I have served as Secretary and Vice President of the UWC IT Society, Chairperson of Geekulcha Student Society, and a leader in Women in Computer Science. These roles strengthened my communication, project management, and teamwork skills while mentoring and motivating others.
+        <br><br>
+        Leadership for me wasn’t just about titles; it was about contributing to something bigger than myself. I stepped into roles that challenged me to grow, support my peers, and build tech spaces that were inclusive, collaborative, and empowering.
+      </p>
+    </div>
+
+    <div class="experiences">
+      <div class="experience-card">
+        <img src="./images/lead.jpg" alt="Geekulcha Student Society">
+        <div class="experience-content">
+          <h3>Chairperson, Geekulcha Student Society - UWC 2025</h3>
+          <p>I was honored to establish the UWC Chapter of Geekulcha, driving tech innovation forward.</p>
+          <ul>
+            <li>Led the official launch and setup of the UWC Chapter</li>
+            <li>Collaborated with Geekulcha HQ and UWC to align activities with national innovation goals</li>
+            <li>Ran workshops, talks, and outreach programs focused on tech innovation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <img src="./images/gkss (2).jpg" alt="UWC IT Society">
+        <div class="experience-content">
+          <h3>Vice President, UWC IT Society 2024</h3>
+          <ul>
+            <li>Oversaw major tech events and hackathons in collaboration with local partners</li>
+            <li>Mentored new society members and expanded community outreach</li>
+            <li>Contributed to shaping the society’s vision and strategy for the year</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <img src="./Images/wics.jpg" alt="Women in Computer Science">
+        <div class="experience-content">
+          <h3>Secretary, UWC Women In Computer Science 2023</h3>
+          <ul>
+            <li>Assisted in planning and organizing society events and workshops</li>
+            <li>Maintained internal communication and records</li>
+            <li>Helped build the society’s digital presence and documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<section id="contact" class="section contact">
+  <div class="contact-icons">
+    <a href="mailto:phidzaglimantanganedzeni@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/Ntanganedzeni02" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/ntanganedzeni-phidzaglima-216a36245/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Ntanganedzeni Phidzaglima</p>
+  </footer>
+
+  <script>
+    // Fade-in experience cards on scroll
+    const cards = document.querySelectorAll('.experience-card');
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>

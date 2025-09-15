@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoring | Ntanganedzeni Phidzaglima</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    main {
+      max-width: 1100px;
+      margin: 6rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 3rem;
+    }
+
+    /* Timeline container */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--accent);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .timeline-item.left { left: 0; }
+    .timeline-item.right { left: 50%; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      top: 1rem;
+      right: -10px;
+    }
+
+    .timeline-item.right::before {
+      left: -10px;
+      right: auto;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .timeline-item h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .timeline-item p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .timeline-item,
+      .timeline-item.right,
+      .timeline-item.left {
+        width: 100%;
+        left: 0 !important;
+      }
+      .timeline-item::before {
+        left: calc(50% - 10px);
+        right: auto;
+      }
+      .timeline::after {
+        left: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Ntanganedzeni</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="leadership.html">Leadership</a></li>
+        <li><a href="tutoring.html">Tutoring</a></li>
+        <li><a href="competitions.html">Hackathons</a></li>
+        <li><a href="certificate.html">Certificates</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>My Tutoring Experience</h1>
+
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2025</h3>
+          <h4>Statistics 151</h4>
+          <p>As a student tutor at UWC, I assisted peers in various Statistics modules over three years. This sharpened my communication, patience, and teaching skills while supporting others academically.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>2024</h3>
+          <h4>Statistics 211</h4>
+          <p>Second-year module focusing on applied data analysis and statistical models. Supported students with SAS and R, interpreting outputs, and real-world data examples. Provided one-on-one assistance for students struggling with coursework.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2023</h3>
+          <h4>Statistics 142</h4>
+          <p>A specialized module for health sciences students integrating biostatistics and case-based data analysis. Assisted students in understanding statistical concepts, applying them to health-related data, and preparing for assignments and exams.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<section id="contact" class="section contact">
+  <div class="contact-icons">
+    <a href="mailto:phidzaglimantanganedzeni@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/Ntanganedzeni02" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/ntanganedzeni-phidzaglima-216a36245/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Ntanganedzeni Phidzaglima</p>
+  </footer>
+
+  <script>
+    // Fade-in timeline items on scroll
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const observerOptions = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    timelineItems.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
